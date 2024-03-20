@@ -72,7 +72,7 @@ function Header() {
                 type="text"
                 placeholder="Search a recipe..."
                 className="w-full py-2 px-2 leading-tight focus:outline-none focus:shadow-outline sel"
-                onKeyDown={handleSearch} // Handle search on Enter key press
+                onKeyDown={handleSearch}
               />
               <button
                 type="button"
@@ -97,7 +97,11 @@ function Header() {
           </div>
           <div className="hidden md:block">
             <nav className="flex items-center text-gray-900">
-              <a className="mr-5 hover:text-gray-900 hover:underline">
+              <a
+                className="mr-5 hover:text-gray-900 hover:underline"
+                href="https://github.com/devarsheecodess"
+                target="_blank"
+              >
                 Developer
               </a>
               <a className="hover:text-gray-900 hover:underline">About Us</a>
@@ -124,7 +128,13 @@ function Header() {
               </svg>
             </button>
             <nav className="flex flex-col items-start text-gray-900">
-              <a className="py-1 hover:bg-gray-200">Developer</a>
+              <a
+                className="py-1 hover:bg-gray-200"
+                href="https://github.com/devarsheecodess"
+                target="_blank"
+              >
+                Developer
+              </a>
               <a className="py-1 hover:bg-gray-200">About Us</a>
             </nav>
           </div>
