@@ -2,26 +2,23 @@ import React, { useState } from "react";
 import Body from "./Body.jsx";
 
 function Header() {
-  // State to manage visibility of the sidebar
   const [showSidebar, setShowSidebar] = useState(false);
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("");
 
-  // Function to toggle the visibility of the sidebar
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
 
-  // Function to handle search action
-const handleSearch = (event) => {
-  if (event.key === "Enter" || event.type === "click") {
-    if(event.target.value == undefined){
-      alert("Please enter a dish...")
-    } else{
-      setSearch(event.target.value);
+  const handleSearch = (event) => {
+    if (event.key === "Enter" || event.type === "click") {
+      if (event.target.value == undefined) {
+        alert("Please enter a dish...");
+      } else {
+        setSearch(event.target.value);
+      }
+      console.log("Performing search for:", event.target.value);
     }
-    console.log("Performing search for:", event.target.value);
-  }
-};
+  };
 
   return (
     <>
@@ -41,9 +38,11 @@ const handleSearch = (event) => {
               >
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
               </svg>
-              <span className="ml-3 mr-14 text-xl font-bold">FlavourFusion</span>
+              <span className="ml-3 mr-14 text-xl font-bold">
+                FlavourFusion
+              </span>
             </a>
-            {/* Sidebar toggle button (visible only on phones) */}
+
             <button
               className="md:hidden ml-4 text-gray-900 focus:outline-none"
               onClick={toggleSidebar}
@@ -66,7 +65,7 @@ const handleSearch = (event) => {
               </svg>
             </button>
           </div>
-          {/* Search bar */}
+
           <div className="flex justify-center items-center w-full md:w-auto mt-4 md:mt-0 relative">
             <div className="border border-black rounded-full w-70 h-10 px-4 flex items-center">
               <input
@@ -75,7 +74,6 @@ const handleSearch = (event) => {
                 className="w-full py-2 px-2 leading-tight focus:outline-none focus:shadow-outline sel"
                 onKeyDown={handleSearch} // Handle search on Enter key press
               />
-              {/* Search button with magnifying glass icon */}
               <button
                 type="button"
                 className="ml-2 focus:outline-none"
@@ -97,7 +95,6 @@ const handleSearch = (event) => {
               </button>
             </div>
           </div>
-          {/* "Developer" and "About Us" links (visible on laptops) */}
           <div className="hidden md:block">
             <nav className="flex items-center text-gray-900">
               <a className="mr-5 hover:text-gray-900 hover:underline">
@@ -107,10 +104,8 @@ const handleSearch = (event) => {
             </nav>
           </div>
         </div>
-        {/* Sidebar with "Developer" and "About Us" links (visible only on phones) */}
         {showSidebar && (
           <div className="md:hidden absolute top-0 left-0 w-full bg-white p-5">
-            {/* Close button */}
             <button
               className="absolute top-0 right-0 text-gray-900 focus:outline-none mt-3 mr-3"
               onClick={toggleSidebar}
