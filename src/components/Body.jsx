@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { RingLoader } from "react-spinners";
-import HomePic from './assets/homepageBanner.png';
+import HomePic from "./assets/homepageBanner.png";
 
 function Body({ value }) {
   const [dishes, setDishes] = useState([]);
@@ -45,7 +45,7 @@ function Body({ value }) {
             <h1 className="text-2xl font-semibold mb-8 text-red-800 ml-7 mr-7 mt-4">
               Search results for: {value}
             </h1>
-            {loader ? ( 
+            {loader ? (
               <div className="flex justify-center">
                 <RingLoader color="#854d0e" loading={loader} size={150} />
               </div>

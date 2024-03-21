@@ -27,7 +27,6 @@ function Header() {
         <div className="container mx-auto flex flex-wrap p-5 items-center justify-between md:flex-row">
           <div className="flex items-center">
             <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-             
               <span className="ml-3 mr-14 text-xl font-bold">
                 FlavourFusion
               </span>
@@ -66,7 +65,9 @@ function Header() {
                 Developer
               </a>
               <NavLink to="/about">
-                <a className="hover:text-gray-900 hover:underline mr-5 font-semibold">About Us</a>
+                <a className="hover:text-gray-900 hover:underline mr-5 font-semibold">
+                  About Us
+                </a>
               </NavLink>
             </nav>
           </div>

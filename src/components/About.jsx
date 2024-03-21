@@ -7,7 +7,7 @@ function About() {
     <>
       <NavLink to="/" className="absolute top-4 left-4 z-10">
         <button className="text-white bg-yellow-500 hover:bg-yellow-600 border-0 py-2 px-4 focus:outline-none rounded">
-        <i class="fa-solid fa-house"></i>
+          <i class="fa-solid fa-house"></i>
         </button>
       </NavLink>
       <section className="text-gray-600 body-font bg-yellow-200">
@@ -41,11 +41,10 @@ function About() {
               your taste buds explore the world!
             </p>
             <div className="flex justify-center">
-              <NavLink to='/'>
-
-              <button className="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">
-                Explore Dishes
-              </button>
+              <NavLink to="/">
+                <button className="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">
+                  Explore Dishes
+                </button>
               </NavLink>
             </div>
           </div>
