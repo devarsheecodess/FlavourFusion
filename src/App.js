@@ -12,6 +12,7 @@ function App() {
       element: (
         <>
           <Header />
+          <Footer />
         </>
       ),
     },
@@ -20,6 +21,7 @@ function App() {
       element: (
         <>
           <About />
+          <Footer />
         </>
       ),
     },
