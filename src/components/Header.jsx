@@ -74,6 +74,7 @@ function Header() {
                 className="w-full py-2 px-2 leading-tight focus:outline-none focus:shadow-outline sel"
                 onKeyDown={handleSearch}
               />
+
               <button
                 type="button"
                 className="ml-2 focus:outline-none"

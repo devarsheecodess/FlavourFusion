@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Body({ value }) {
   const [dishes, setDishes] = useState([]);
@@ -43,10 +44,7 @@ function Body({ value }) {
                 <p>No dishes found</p>
               ) : (
                 dishes.map((dish, index) => (
-                  <section
-                    key={index}
-                    className="text-gray-600 body-font"
-                  >
+                  <section key={index} className="text-gray-600 body-font">
                     <div className="border border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                       <img
                         className="lg:h-48 md:h-36 w-full object-cover object-center"
@@ -72,21 +70,23 @@ function Body({ value }) {
                           {dish.strInstructions}
                         </p>
                         <div className="flex items-center flex-wrap">
-                          <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0 cursor-pointer">
-                            View Recipe
-                            <svg
-                              className="w-4 h-4 ml-2"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              fill="none"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            >
-                              <path d="M5 12h14"></path>
-                              <path d="M12 5l7 7-7 7"></path>
-                            </svg>
-                          </a>
+                          <NavLink to={`/details/${dish.idMeal}`}>
+                            <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0 cursor-pointer">
+                              View Recipe
+                              <svg
+                                className="w-4 h-4 ml-2"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                fill="none"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              >
+                                <path d="M5 12h14"></path>
+                                <path d="M12 5l7 7-7 7"></path>
+                              </svg>
+                            </a>
+                          </NavLink>
                           <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                             <svg
                               className="w-4 h-4 mr-1"
@@ -125,7 +125,9 @@ function Body({ value }) {
             </div>
           </>
         ) : (
-            <h1 className="text-2xl font-semibold mb-8 text-blue-800">Welcome!</h1>
+          <h1 className="text-2xl font-semibold mb-8 text-blue-800">
+            Welcome!
+          </h1>
         )}
       </div>
     </div>
