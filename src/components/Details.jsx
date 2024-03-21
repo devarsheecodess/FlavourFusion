@@ -28,8 +28,18 @@ function Details() {
     fetchDishDetails();
   }, [id]);
 
+  const handleClose = () => {
+    window.location.href = '/';
+  };
+
   return (
     <>
+      <button
+        onClick={handleClose}
+        className="absolute top-4 right-4 z-10 bg-red-800 rounded-full w-12 h-12 text-white flex items-center justify-center"
+      >
+        X
+      </button>
       {dishDetails && (
         <div>
           <h1 className="font-bold ml-5 mt-8 text-3xl text-yellow-800 underline underline-offset-2">

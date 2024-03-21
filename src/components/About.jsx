@@ -1,9 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import banner from "./assets/about-banner.jpg";
 
 function About() {
   return (
     <>
+      <NavLink to="/" className="absolute top-4 left-4 z-10">
+        <button className="text-white bg-yellow-500 hover:bg-yellow-600 border-0 py-2 px-4 focus:outline-none rounded">
+        <i class="fa-solid fa-house"></i>
+        </button>
+      </NavLink>
       <section className="text-gray-600 body-font">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
@@ -35,9 +41,12 @@ function About() {
               your taste buds explore the world!
             </p>
             <div className="flex justify-center">
+              <NavLink to='/'>
+
               <button className="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">
                 Explore Dishes
               </button>
+              </NavLink>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Body from "./Body.jsx";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -10,13 +11,13 @@ function Header() {
   };
 
   const handleSearch = (event) => {
-    if (event.key === "Enter" || event.type === "click") {
-      if (event.target.value == undefined) {
+    if (event.key === "Enter") {
+      if (event.target.value == undefined || event.target.value == "") {
         alert("Please enter a dish...");
       } else {
         setSearch(event.target.value);
+        console.log("Searching:", event.target.value);
       }
-      console.log("Performing search for:", event.target.value);
     }
   };
 
@@ -74,26 +75,6 @@ function Header() {
                 className="w-full py-2 px-2 leading-tight focus:outline-none focus:shadow-outline sel"
                 onKeyDown={handleSearch}
               />
-
-              <button
-                type="button"
-                className="ml-2 focus:outline-none"
-                onClick={handleSearch}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M21 21l-4.35-4.35"></path>
-                  <circle cx="10" cy="10" r="8"></circle>
-                </svg>
-              </button>
             </div>
           </div>
           <div className="hidden md:block">
@@ -105,7 +86,9 @@ function Header() {
               >
                 Developer
               </a>
-              <a className="hover:text-gray-900 hover:underline">About Us</a>
+              <NavLink to="/about">
+                <a className="hover:text-gray-900 hover:underline">About Us</a>
+              </NavLink>
             </nav>
           </div>
         </div>
@@ -136,7 +119,9 @@ function Header() {
               >
                 Developer
               </a>
-              <a className="py-1 hover:bg-gray-200">About Us</a>
+              <NavLink to="/about">
+                <a className="py-1 hover:bg-gray-200">About Us</a>
+              </NavLink>
             </nav>
           </div>
         )}
